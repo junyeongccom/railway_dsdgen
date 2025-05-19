@@ -119,8 +119,39 @@ class XlsxJsonConverter:
             new_columns[0] = '계정과목'
             df.columns = new_columns
         
+        # 시트 데이터 전처리
+        df = XlsxJsonConverter.clean_sheet_data(df, sheet_name)
+        
         # 데이터프레임을 레코드 형식의 JSON으로 변환
         return df.to_dict(orient="records")
+    
+    @staticmethod
+    def clean_sheet_data(df: pd.DataFrame, sheet_name: str) -> pd.DataFrame:
+        """
+        시트 데이터를 전처리하는 함수
+        
+        Args:
+            df: 처리할 DataFrame
+            sheet_name: 시트 이름
+            
+        Returns:
+            pd.DataFrame: 전처리된 DataFrame
+        """
+        # 모든 셀이 비어있는 행 제거
+        df = df.dropna(how='all')
+        
+        # 시트 이름이 포함된 행 제거
+        # 모든 열을 문자열로 변환하여 검사
+        for col in df.columns:
+            df[col] = df[col].astype(str)
+        
+        # 시트 이름이 포함된 행 찾기
+        mask = df.apply(lambda row: any(sheet_name in str(val) for val in row), axis=1)
+        
+        # 해당 행 제거
+        df = df[~mask]
+        
+        return df
     
     @staticmethod
     def _process_date_columns(df: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[int]]:

@@ -4,7 +4,6 @@ from ..domain.controller.xsldsd_controller import xsldsd_controller
 
 # 라우터 생성
 router = APIRouter(
-    prefix="/xsldsd",
     tags=["XSL DSD"],
     responses={404: {"description": "Not found"}},
 )

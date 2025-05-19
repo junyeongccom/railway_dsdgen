@@ -24,7 +24,7 @@ app.include_router(xbrl_parser_router)
 app.include_router(opendart_router)
 app.include_router(dsdgen_router)
 app.include_router(dsd_auto_fetch_router)
-app.include_router(xsldsd_router)
+app.include_router(xsldsd_router, prefix="/dsdgen")
 
 
 @app.get("/")
