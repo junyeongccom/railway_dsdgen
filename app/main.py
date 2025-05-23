@@ -10,7 +10,7 @@ from .api.xsldsd_router import router as xsldsd_router
 load_dotenv()
 app = FastAPI()
 
-# CORS 설정
+# CORS 설정###
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "https://conan.ai.kr"],  # Next.js 개발 서버
