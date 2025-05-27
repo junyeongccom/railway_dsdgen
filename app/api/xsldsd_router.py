@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File, Query
 from typing import Dict, List, Any, Optional
-from ..domain.controller.xsldsd_controller import xsldsd_controller
+from app.domain.controller.xsldsd_controller import xsldsd_controller
 
 # 라우터 생성
 router = APIRouter(

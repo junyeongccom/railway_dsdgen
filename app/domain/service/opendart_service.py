@@ -1,4 +1,4 @@
-from ..repository.opendart_repository import OpenDartRepository
+from app.domain.repository.opendart_repository import OpenDartRepository
 from typing import Optional
 
 class OpenDartService:

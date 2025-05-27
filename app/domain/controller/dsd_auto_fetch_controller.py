@@ -4,10 +4,13 @@ DSD 소스 데이터 자동 조회 및 생성 컨트롤러
 from fastapi import Depends, HTTPException, status
 import asyncpg
 import logging
+from typing import List, Optional
+import asyncio
+from datetime import datetime
 
-from ..service.dsd_auto_fetch_service import DsdAutoFetchService
-from ..model.dsdgen_schema import DsdSourceListResponse
-from ...foundation.db.asyncpg_pool import get_pool
+from app.domain.service.dsd_auto_fetch_service import DsdAutoFetchService
+from app.domain.model.dsdgen_schema import DsdSourceListResponse
+from app.foundation.db.asyncpg_pool import get_pool
 
 # 로거 설정
 logger = logging.getLogger(__name__)

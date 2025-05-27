@@ -5,13 +5,24 @@ XBRL 파싱 결과를 데이터베이스에 저장하는 리포지토리 모듈
 저장하기 위한 함수와 유틸리티를 제공합니다.
 """
 
+import asyncio
+import asyncpg
 from typing import List, Dict, Any, Optional
 import logging
+from datetime import datetime
+import json
+import os
+import sys
+
+# 현재 파일의 디렉토리를 기준으로 프로젝트 루트를 sys.path에 추가
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, '../../..'))
+sys.path.insert(0, project_root)
 
 from asyncpg.pool import Pool
 from asyncpg.exceptions import UniqueViolationError, PostgresError
 
-from ...foundation.db.asyncpg_pool import get_pool
+from app.foundation.db.asyncpg_pool import get_pool
 
 # 로깅 설정
 logger = logging.getLogger(__name__)

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query
-from ..domain.controller.opendart_controller import DocumentFetchController
+from app.domain.controller.opendart_controller import DocumentFetchController
 from typing import Dict, Any, Optional
 
 router = APIRouter(prefix="/opendart", tags=["OPEN DART"])

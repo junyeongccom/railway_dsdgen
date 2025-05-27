@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query
-from ..domain.controller.xbrl_parser_controller import XBRLParserController
+from app.domain.controller.xbrl_parser_controller import XBRLParserController
 from typing import Dict, Any
 
 router = APIRouter(prefix="/xbrl-parser", tags=["XBRL Parser"])

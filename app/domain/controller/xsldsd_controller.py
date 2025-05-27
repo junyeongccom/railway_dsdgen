@@ -1,6 +1,6 @@
 from typing import Dict, List, Any, Optional
 from fastapi import UploadFile, HTTPException
-from ..service.xsldsd_service import xsldsd_service
+from app.domain.service.xsldsd_service import xsldsd_service
 
 
 class XslDsdController:

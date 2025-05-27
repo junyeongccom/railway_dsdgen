@@ -1,9 +1,11 @@
 """
 DSD 소스 데이터 자동 조회 및 생성 API 라우터
 """
-from fastapi import APIRouter, Depends, Query
-from ..domain.controller.dsd_auto_fetch_controller import DsdAutoFetchController
-from ..domain.model.dsdgen_schema import DsdSourceListResponse
+from fastapi import APIRouter, HTTPException, Query, Depends
+from typing import List, Optional
+import logging
+from app.domain.controller.dsd_auto_fetch_controller import DsdAutoFetchController
+from app.domain.model.dsdgen_schema import DsdSourceListResponse
 
 # 라우터 설정
 router = APIRouter(prefix="/dsdgen", tags=["DSD Auto Generator"])

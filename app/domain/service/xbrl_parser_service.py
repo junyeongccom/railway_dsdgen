@@ -1,6 +1,6 @@
-from ...foundation.xbrl_parser.xbrl_parser import XBRLParser
+from app.foundation.xbrl_parser.xbrl_parser import XBRLParser
 import pandas as pd
-from ..repository.xbrl_parser_repository import insert_dsd_source_bulk
+from app.domain.repository.xbrl_parser_repository import insert_dsd_source_bulk
 
 class XBRLParserService:
     def __init__(self):

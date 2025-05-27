@@ -1,4 +1,4 @@
-from ..service.xbrl_parser_service import XBRLParserService
+from app.domain.service.xbrl_parser_service import XBRLParserService
 from typing import Dict, Any
 
 class XBRLParserController:

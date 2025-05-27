@@ -1,4 +1,4 @@
-from ..service.opendart_service import OpenDartService
+from app.domain.service.opendart_service import OpenDartService
 import asyncio
 from typing import Optional, Dict, Any
 
